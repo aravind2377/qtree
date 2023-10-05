@@ -55,7 +55,7 @@ resource "aws_nat_gateway" "project_natgateway"{
    allocation_id= aws_eip.project_nat_eip.id
    subnet_id = aws_subnet.prod-public.id
     tags = {
-      Name = "Project Natgateway"
+      Name = "Project Nat"
           }
 }
 
