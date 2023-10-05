@@ -1,0 +1,13 @@
+
+---
+- name: Software installation
+  hosts: salve1
+  tasks:
+      - name: install nginx
+        apt: name=nginx state=latest
+      - name: start nginx service
+        service:
+            name: nginx
+            state: started
+
+

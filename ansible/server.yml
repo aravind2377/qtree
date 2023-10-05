@@ -1,0 +1,20 @@
+---
+- name: sever setup
+  hosts: all
+  tasks:
+    - name: creat user
+      user:
+         name: testuser
+         password: la@123
+
+
+
+    - name: create a file
+      file:
+        path: /root/serversetup.yml
+        state: touch
+        
+
+
+  
+   

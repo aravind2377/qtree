@@ -1,0 +1,27 @@
+---
+- name: Install packages on servers
+  hosts: your_server_group
+  become: yes
+
+  tasks:
+    - name: Install packages on Ubuntu
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - java
+        - python
+        - mysql-server
+        - apache2
+      when: ansible_distribution == 'Ubuntu'
+
+    - name: Install packages on Amazon Linux
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - java
+        - python
+        - mysql-server
+        - httpd
+      when: ansible_distribution == 'Amazon'
